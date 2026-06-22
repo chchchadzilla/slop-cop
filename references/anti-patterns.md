@@ -10,6 +10,12 @@ The single most common slop failure. AI image gens fill text regions with gibber
 ### Extra / melted / fused fingers
 Six fingers, four fingers, a thumb on the wrong side, fingers melting into each other or into objects. **Automatic `KILL`** for anything shipping near a face or as a hero.
 
+### Text overflow / card overlap
+If CTA text spills outside a button/squircle, body copy runs under a dashboard card, or cards overlap unrelated content, the asset is not presentable. **Automatic `KILL`** for shipping graphics. This is not a polish issue; it is broken layout.
+
+### Copy contradicts chart/data direction
+If visible copy says "Cost per lead trending down" while the graph line is sideways or slightly upward, the visual evidence contradicts the claim. Same for "growth" copy paired with falling metrics, or any KPI/card/graph that tells a different story than its label. **Automatic `KILL`** for shipping creative unless the chart or copy is changed.
+
 ### Wrong aspect ratio used as full-bleed
 A 1024×1024 square cropped to 1200×400 is not a banner — it's a banner-shaped piece of a square with the subject's head missing. Composition has to match aspect. **`FIX` only if the focal point survives the crop; otherwise `KILL`.**
 
@@ -58,3 +64,6 @@ Cover crops from the center by default. Faces and focal points get decapitated. 
 3. Visible watermark or AI signature.
 4. Major brand-palette clash with no recolor path.
 5. Hero composition where the focal point doesn't survive the actual crop.
+6. Text visibly overflowing outside its container or CTA shape.
+7. Cards/buttons/graphs visibly overlapping unrelated content.
+8. Copy contradicting visible chart/data/graph direction.

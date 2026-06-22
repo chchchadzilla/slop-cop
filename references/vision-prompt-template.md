@@ -13,6 +13,11 @@ Brand palette / style: {BRAND}
 
 Return your findings under these exact headers, in this order:
 
+0. HUMAN-VISIBLE LAYOUT CHECK
+   - Flag text outside buttons/cards/squircles/containers.
+   - Flag clipped text, broken margins, accidental empty space, or screenshot framing issues.
+   - Flag overlapping cards/buttons/graphs or elements visually sitting on top of unrelated content.
+
 1. HALLUCINATION SCAN
    - Any visible text in the image: transcribe it verbatim. Flag any gibberish, misspellings, broken letterforms, or non-words.
    - Hands/fingers: count fingers on every visible hand. Flag extras, missing, fused, melted, or impossible joints.
@@ -21,27 +26,34 @@ Return your findings under these exact headers, in this order:
    - Signatures/watermarks: report any visible watermark, signature, AI-tool branding, or stock-photo overlay.
    - Lighting: flag light sources that contradict each other or shadows that point the wrong way.
 
-2. LEGIBILITY
+2. SEMANTIC CONSISTENCY
+   - Compare visible copy against visible charts, KPIs, numbers, arrows, and graph direction.
+   - If copy says a metric is trending down, verify the visible line/bar/arrow trends down. If it is flat or upward, flag contradiction.
+   - If copy says growth/improvement, verify numbers and visuals support that story.
+   - Flag any dashboard/card that communicates a false or internally inconsistent claim.
+
+3. LEGIBILITY
    - If text is present, estimate whether it would be readable at the target render size. Identify the smallest text element.
    - If no text, write "n/a".
 
-3. FOCAL POINT & RESPONSIVE SAFETY
+4. FOCAL POINT & RESPONSIVE SAFETY
    - Describe the focal subject and its location (e.g. "shark face, centered, ~50% from left, ~40% from top").
    - State whether the focal subject would survive crops to 16:9, 4:5, 1:1, 9:16. List which crops would decapitate or remove the subject.
 
-4. FORMAT NOTES
+5. FORMAT NOTES
    - Background: solid / transparent / gradient / photo. Does it need transparency (PNG/WEBP) for the target slot?
    - Dominant colors: list 3-5 hex approximations.
    - Style: photoreal / illustration / 3d render / mixed.
 
-5. BRAND FIT
+6. BRAND FIT
    - If brand palette provided, score color coherence (match / close / off / clash) and style coherence (match / off).
    - If no brand provided, write "no brand context".
 
-6. VERDICT RECOMMENDATION
+7. VERDICT RECOMMENDATION
    - One word: SHIP, FIX, or KILL.
    - One sentence reason.
-   - If FIX, name the specific fix (crop, regenerate text region, recolor, swap format, etc.).
+   - If FIX, name the specific fix (crop, regenerate text region, recolor, swap format, change copy/chart, etc.).
+   - If any text overflow, container overlap, or chart/copy contradiction exists, verdict must be KILL.
 
 Be terse. Do not apologize. Do not add a preamble.
 ```
